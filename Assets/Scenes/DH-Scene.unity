@@ -857,7 +857,7 @@ GameObject:
   m_Component:
   - component: {fileID: 768010538}
   - component: {fileID: 768010540}
-  - component: {fileID: 768010539}
+  - component: {fileID: 768010541}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -881,20 +881,6 @@ Transform:
   - {fileID: 1056852813}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &768010539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 768010537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 798425b65c8b5084cbbd9d4c3cfc078a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTarget: {fileID: 184434208}
-  meshAgent: {fileID: 0}
 --- !u!195 &768010540
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -917,6 +903,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &768010541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768010537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 798425b65c8b5084cbbd9d4c3cfc078a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cureentTarget: {fileID: 184434208}
 --- !u!1 &1056852812
 GameObject:
   m_ObjectHideFlags: 0
