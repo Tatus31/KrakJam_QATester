@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Doors : BugBase
 {
+    private BoxCollider myCollider;
+
+    void Start()
+    {
+        myCollider = GetComponent<BoxCollider>();
+    }
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -13,7 +19,7 @@ public class Doors : BugBase
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider != null)
+                if (hit.collider != myCollider)
                 {
                     if (isFixed)
                     {
@@ -46,6 +52,10 @@ public class Doors : BugBase
                                     //TODO
                                     break;
                             }
+                        }
+                        else
+                        {
+                            Debug.Log("Not enough items");
                         }
                     }
                 }
