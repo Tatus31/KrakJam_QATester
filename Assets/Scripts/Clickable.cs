@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Clickable : MonoBehaviour
 {
+    [SerializeField] public ClickableObject ObjectType;
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -13,7 +14,7 @@ public class Clickable : MonoBehaviour
             {
                 if (hit.collider != null)
                 {
-                    Debug.Log("Object Clicked: " + hit.collider.gameObject.name);
+                    InvManager.Clicked(ObjectType);
                 }
             }
         }
