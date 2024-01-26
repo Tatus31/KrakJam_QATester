@@ -12,7 +12,6 @@ public class InvManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Set default inventory items
         InitInventory();
         SelectedItem = InvItem.BarrierCrates;
         invUI = GameObject.Find("Inventory").GetComponent<InvUI>();

@@ -23,14 +23,14 @@ public class Doors : BugBase
                 {
                     if (isFixed)
                     {
-                        isFixed = false;
                         Debug.Log("Unfixing");
+                        isFixed = false;
                         InvManager.AddItems(InvItem.DoorFixCode);
                     }
                     else if (isBlocked)
                     {
-                        isBlocked = false;
                         Debug.Log("Unblocking");
+                        isBlocked = false;
                         InvManager.AddItems(InvItem.BarrierCrates);
                     }
                     else if (AcceptedItems.Contains(InvManager.SelectedItem))
@@ -42,13 +42,13 @@ public class Doors : BugBase
                             switch (InvManager.SelectedItem)
                             {
                                 case InvItem.DoorFixCode:
-                                    isFixed = true;
                                     Debug.Log("Fixing");
+                                    isFixed = true;
                                     //TODO
                                     break;
                                 case InvItem.BarrierCrates:
-                                    isBlocked = true;
                                     Debug.Log("Blocking");
+                                    isBlocked = true;
                                     //TODO
                                     break;
                             }
@@ -57,6 +57,10 @@ public class Doors : BugBase
                         {
                             Debug.Log("Not enough items");
                         }
+                    }
+                    else
+                    {
+                        Debug.Log("Incorrect items");
                     }
                 }
             }
