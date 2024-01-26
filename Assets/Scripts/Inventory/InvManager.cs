@@ -5,7 +5,7 @@ using UnityEngine;
 public class InvManager : MonoBehaviour
 {
     public static Dictionary<InvItem, int> Inv;
-    public static string SelectedItem;
+    public static InvItem SelectedItem;
 
     // Start is called before the first frame update
     void Start()
@@ -17,14 +17,23 @@ public class InvManager : MonoBehaviour
             { InvItem.HoleFixCode, 1 },
             { InvItem.BarrierCrates, 2 }
         };
-        SelectedItem = null;
+        SelectedItem = InvItem.BarrierCrates;
     }
 
-    public static void Clicked(ClickableObject ObjectType)
+    //public static void Clicked(ClickableObject ObjectType)
+    public static void Clicked(object clickedObject)
     {
-        switch (ObjectType)
+        switch (clickedObject)
         {
             case ClickableObject.Door:
+                if (SelectedItem == InvItem.BarrierCrates)
+                {
+
+                }
+                else if (SelectedItem == InvItem.DoorFixCode)
+                {
+
+                }
 
                 break;
             case ClickableObject.Hole:
