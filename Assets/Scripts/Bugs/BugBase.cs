@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BugBase : MonoBehaviour
 {
-    bool isFixed = false;
+    public bool isFixed = false;
+    public bool isBlocked = false;
     [SerializeField] public List<InvItem> AcceptedItems;
 }

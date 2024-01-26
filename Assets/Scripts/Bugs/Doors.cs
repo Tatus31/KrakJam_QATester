@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Doors : BugBase
 {
+    private BoxCollider myCollider;
+
+    void Start()
+    {
+        myCollider = GetComponent<BoxCollider>();
+    }
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -13,9 +19,49 @@ public class Doors : BugBase
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider != null || AcceptedItems.Contains(InvManager.SelectedItem))
+                if (hit.collider != myCollider)
                 {
-
+                    if (isFixed)
+                    {
+                        Debug.Log("Unfixing");
+                        isFixed = false;
+                        InvManager.AddItems(InvItem.DoorFixCode);
+                    }
+                    else if (isBlocked)
+                    {
+                        Debug.Log("Unblocking");
+                        isBlocked = false;
+                        InvManager.AddItems(InvItem.BarrierCrates);
+                    }
+                    else if (AcceptedItems.Contains(InvManager.SelectedItem))
+                    {
+                        // Check if the item is available
+                        if (InvManager.TryToUseSelectedItem())
+                        {
+                            //Use items
+                            switch (InvManager.SelectedItem)
+                            {
+                                case InvItem.DoorFixCode:
+                                    Debug.Log("Fixing");
+                                    isFixed = true;
+                                    //TODO
+                                    break;
+                                case InvItem.BarrierCrates:
+                                    Debug.Log("Blocking");
+                                    isBlocked = true;
+                                    //TODO
+                                    break;
+                            }
+                        }
+                        else
+                        {
+                            Debug.Log("Not enough items");
+                        }
+                    }
+                    else
+                    {
+                        Debug.Log("Incorrect items");
+                    }
                 }
             }
         }

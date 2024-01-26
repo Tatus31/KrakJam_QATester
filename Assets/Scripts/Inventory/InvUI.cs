@@ -9,29 +9,32 @@ public class InvUI : MonoBehaviour
     [SerializeField] public GameObject ItemA;
     [SerializeField] public GameObject ItemB;
     [SerializeField] public GameObject ItemC;
+    [SerializeField] public GameObject SelectedMarker;
 
-    public void UpdateCount(GameObject ItemUI, int newCount)
+    public void UpdateCount()
     {
-        TextMeshPro textField = ItemUI.GetComponentInChildren<TextMeshPro>();
-        textField.text = $"{newCount}/{textField.text.Split("/")[1]}";
-    }
-    public void ChangeSelected(GameObject ItemUI)
-    {
-    }
+        TextMeshProUGUI textField = ItemA.GetComponentInChildren<TextMeshProUGUI>();
+        textField.text = $"{InvManager.Inv[InvItem.DoorFixCode]}/{textField.text.Split("/")[1]}";
 
-    public void Update()
+        textField = ItemB.GetComponentInChildren<TextMeshProUGUI>();
+        textField.text = $"{InvManager.Inv[InvItem.HoleFixCode]}/{textField.text.Split("/")[1]}";
+
+        textField = ItemC.GetComponentInChildren<TextMeshProUGUI>();
+        textField.text = $"{InvManager.Inv[InvItem.BarrierCrates]}/{textField.text.Split("/")[1]}";
+    }
+    public void ChangeSelected()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        switch (InvManager.SelectedItem)
         {
-            ChangeSelected(ItemA);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            ChangeSelected(ItemB);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            ChangeSelected(ItemC);
+            case InvItem.DoorFixCode:
+                SelectedMarker.GetComponent<RectTransform>().position = ItemA.GetComponent<RectTransform>().position;
+                break;
+            case InvItem.HoleFixCode:
+                SelectedMarker.GetComponent<RectTransform>().position = ItemB.GetComponent<RectTransform>().position;
+                break;
+            case InvItem.BarrierCrates:
+                SelectedMarker.GetComponent<RectTransform>().position = ItemC.GetComponent<RectTransform>().position;
+                break;
         }
     }
 }
