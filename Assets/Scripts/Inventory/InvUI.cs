@@ -9,6 +9,7 @@ public class InvUI : MonoBehaviour
     [SerializeField] public GameObject ItemA;
     [SerializeField] public GameObject ItemB;
     [SerializeField] public GameObject ItemC;
+    [SerializeField] public GameObject SelectedMarker;
 
     public void UpdateCount()
     {
@@ -21,24 +22,19 @@ public class InvUI : MonoBehaviour
         textField = ItemC.GetComponentInChildren<TextMeshProUGUI>();
         textField.text = $"{InvManager.Inv[InvItem.BarrierCrates]}/{textField.text.Split("/")[1]}";
     }
-    public void ChangeSelected(GameObject ItemUI)
+    public void ChangeSelected()
     {
-
-    }
-
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        switch (InvManager.SelectedItem)
         {
-            ChangeSelected(ItemA);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            ChangeSelected(ItemB);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            ChangeSelected(ItemC);
+            case InvItem.DoorFixCode:
+                SelectedMarker.GetComponent<RectTransform>().position = ItemA.GetComponent<RectTransform>().position;
+                break;
+            case InvItem.HoleFixCode:
+                SelectedMarker.GetComponent<RectTransform>().position = ItemB.GetComponent<RectTransform>().position;
+                break;
+            case InvItem.BarrierCrates:
+                SelectedMarker.GetComponent<RectTransform>().position = ItemC.GetComponent<RectTransform>().position;
+                break;
         }
     }
 }

@@ -43,4 +43,23 @@ public class InvManager : MonoBehaviour
         }
         return false;
     }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            SelectedItem = InvItem.DoorFixCode;
+            invUI.ChangeSelected();
+        }
+        else if (Input.GetKeyDown(KeyCode.W))
+        {
+            SelectedItem = InvItem.HoleFixCode;
+            invUI.ChangeSelected();
+        }
+        else if (Input.GetKeyDown(KeyCode.E))
+        {
+            SelectedItem = InvItem.BarrierCrates;
+            invUI.ChangeSelected();
+        }
+    }
 }
