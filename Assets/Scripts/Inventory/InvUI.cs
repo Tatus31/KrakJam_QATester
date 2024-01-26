@@ -10,13 +10,20 @@ public class InvUI : MonoBehaviour
     [SerializeField] public GameObject ItemB;
     [SerializeField] public GameObject ItemC;
 
-    public void UpdateCount(GameObject ItemUI, int newCount)
+    public void UpdateCount()
     {
-        TextMeshPro textField = ItemUI.GetComponentInChildren<TextMeshPro>();
-        textField.text = $"{newCount}/{textField.text.Split("/")[1]}";
+        TextMeshProUGUI textField = ItemA.GetComponentInChildren<TextMeshProUGUI>();
+        textField.text = $"{InvManager.Inv[InvItem.DoorFixCode]}/{textField.text.Split("/")[1]}";
+
+        textField = ItemB.GetComponentInChildren<TextMeshProUGUI>();
+        textField.text = $"{InvManager.Inv[InvItem.HoleFixCode]}/{textField.text.Split("/")[1]}";
+
+        textField = ItemC.GetComponentInChildren<TextMeshProUGUI>();
+        textField.text = $"{InvManager.Inv[InvItem.BarrierCrates]}/{textField.text.Split("/")[1]}";
     }
     public void ChangeSelected(GameObject ItemUI)
     {
+
     }
 
     public void Update()
