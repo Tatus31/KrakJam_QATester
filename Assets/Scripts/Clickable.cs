@@ -19,10 +19,6 @@ public class Clickable : MonoBehaviour
             {
                 if (hit.collider != null)
                 {
-                    if (hit.collider.tag == "ClickableObject")
-                    {
-                        Debug.Log("Clicked Ground" + hit.collider.gameObject.name);
-                    }
                     InvManager.Clicked(ObjectType);
                 }
             }
