@@ -4,6 +4,11 @@ public class Clickable : MonoBehaviour
 {
     void Update()
     {
+        OnInteractableClicked();
+    }
+
+    private void OnInteractableClicked()
+    {
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -13,7 +18,10 @@ public class Clickable : MonoBehaviour
             {
                 if (hit.collider != null)
                 {
-                    Debug.Log("Object Clicked: " + hit.collider.gameObject.name);
+                    if (hit.collider.tag == "ClickableObject")
+                    {
+                        Debug.Log("Clicked Ground" + hit.collider.gameObject.name);
+                    }
                 }
             }
         }
