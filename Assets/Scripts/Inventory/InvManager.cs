@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class InvManager : MonoBehaviour
 {
@@ -20,28 +21,13 @@ public class InvManager : MonoBehaviour
         SelectedItem = InvItem.BarrierCrates;
     }
 
-    //public static void Clicked(ClickableObject ObjectType)
-    public static void Clicked(object clickedObject)
+    public static bool TryToUseItem(InvItem requestedItem)
     {
-        switch (clickedObject)
+        if (Inv[requestedItem] > 0)
         {
-            case ClickableObject.Door:
-                if (SelectedItem == InvItem.BarrierCrates)
-                {
-
-                }
-                else if (SelectedItem == InvItem.DoorFixCode)
-                {
-
-                }
-
-                break;
-            case ClickableObject.Hole:
-
-                break;
-            case ClickableObject.Catapult:
-
-                break;
+            Inv[requestedItem]--;
+            return true;
         }
+        return false;
     }
 }

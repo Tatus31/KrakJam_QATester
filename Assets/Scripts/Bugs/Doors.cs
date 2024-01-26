@@ -1,8 +1,9 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Clickable : MonoBehaviour
+public class Doors : BugBase
 {
-    [SerializeField] public ClickableObject ObjectType;
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -12,9 +13,9 @@ public class Clickable : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider != null)
+                if (hit.collider != null || AcceptedItems.Contains(InvManager.SelectedItem))
                 {
-                    InvManager.Clicked(ObjectType);
+
                 }
             }
         }

@@ -15,4 +15,23 @@ public class InvUI : MonoBehaviour
         TextMeshPro textField = ItemUI.GetComponentInChildren<TextMeshPro>();
         textField.text = $"{newCount}/{textField.text.Split("/")[1]}";
     }
+    public void ChangeSelected(GameObject ItemUI)
+    {
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            ChangeSelected(ItemA);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            ChangeSelected(ItemB);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            ChangeSelected(ItemC);
+        }
+    }
 }
