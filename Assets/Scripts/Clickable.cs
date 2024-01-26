@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Clickable : MonoBehaviour
 {
+    [SerializeField] public ClickableObject ObjectType;
     void Update()
     {
         OnInteractableClicked();
@@ -22,6 +23,7 @@ public class Clickable : MonoBehaviour
                     {
                         Debug.Log("Clicked Ground" + hit.collider.gameObject.name);
                     }
+                    InvManager.Clicked(ObjectType);
                 }
             }
         }
