@@ -27,7 +27,7 @@ public class BugBase : MonoBehaviour
         {
             Debug.Log("Unblocking");
             isBlocked = false;
-            InvManager.itemQueue.Add(fixingItem);
+            InvManager.itemQueue.Add(blockingItem);
             Invoke("RetrieveItemReference", 3);
             EventManager.onUpdateMap.Invoke();
         }
