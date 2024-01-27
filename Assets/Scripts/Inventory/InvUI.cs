@@ -11,7 +11,7 @@ public class InvUI : MonoBehaviour
 
     public void UpdateCount()
     {
-        Debug.Log("Updating item counts in UI");
+        //Debug.Log("Updating item counts in UI");
         TextMeshProUGUI textField;
         List<InvItem> itemNames = new();
 
