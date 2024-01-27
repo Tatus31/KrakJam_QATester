@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class CatapultScript : MonoBehaviour
+public class CatapultScript : BugBase
 {
 
     [SerializeField]
@@ -33,11 +33,12 @@ public class CatapultScript : MonoBehaviour
 
     private void OnCatapultEnter()
     {
+        Invoke("GameOverReference", 2);
         catapultDirection = cam.transform.position;
         Debug.Log("x" + catapultDirection.x + "y" + catapultDirection.y + "z" + catapultDirection.z);
         Vector3 finalCatapultDir = new Vector3(catapultDirection.x + catapultOffset.x * catapultSpeedMultiplier.x
             , catapultDirection.y * catapultSpeedMultiplier.y
-            , -catapultDirection.z + -catapultOffset.z* catapultSpeedMultiplier.z);
+            , -catapultDirection.z + -catapultOffset.z * catapultSpeedMultiplier.z);
 
         playerRB.AddForce(finalCatapultDir, ForceMode.Acceleration);
         //for (int i = 0; i <= 2; i++)
