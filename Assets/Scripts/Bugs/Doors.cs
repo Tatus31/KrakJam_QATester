@@ -44,7 +44,7 @@ public class Doors : BugBase
                                 case InvItem.DoorFixCode:
                                     Debug.Log("Fixing");
                                     isFixed = true;
-                                    //TODO
+                                    EventManager.onUpdateMap.Invoke();
                                     break;
                                 case InvItem.BarrierCrates:
                                     Debug.Log("Blocking");
