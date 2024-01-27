@@ -35491,6 +35491,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Catapult (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2337117198047687411, guid: 6992e26b7929f184a9d4879ee724d47d,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 866110923}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

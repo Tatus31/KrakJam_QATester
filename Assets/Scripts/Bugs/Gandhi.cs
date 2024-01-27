@@ -10,7 +10,6 @@ public class Gandhi : BugBase
         {
             Invoke("GameOverReference", 3);
             GetComponent<AudioSource>().Play();
-
         }
     }
 }
