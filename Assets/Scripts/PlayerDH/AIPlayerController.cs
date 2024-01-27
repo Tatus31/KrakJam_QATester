@@ -15,7 +15,7 @@ public class AIPlayerController : MonoBehaviour
 
     private void OnEnable()
     {
-
+        //PathfinderTargetManager.onTargetUpdate += SetCurrentTarget;
     }
     private void OnDisable()
     {
@@ -25,15 +25,22 @@ public class AIPlayerController : MonoBehaviour
     {
         targetManager = GetComponent<PathfinderTargetManager>();
         meshAgent = GetComponent<NavMeshAgent>();
+        PathfinderTargetManager.onTargetUpdate?.Invoke();
+
+    }
+    public void SetCurrentTarget(Transform currentTargetPos)
+    {
+        currentTarget = currentTargetPos;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //currentTarget = targetManager.UpdateTarget();
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            PathfinderTargetManager.onTargetUpdate?.Invoke();
+        }
+            //currentTarget = targetManager.SetNearestTarget();
         meshAgent.SetDestination(currentTarget.position);
-
-
     }
 
    

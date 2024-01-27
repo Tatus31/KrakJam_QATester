@@ -21,7 +21,8 @@ public class BugBase : MonoBehaviour
             isFixed = false;
             InvManager.itemQueue.Add(fixingItem);
             Invoke("RetrieveItemReference", 3);
-            EventManager.onUpdateMap.Invoke();
+            PathfinderTargetManager.onTargetUpdate?.Invoke();
+            //EventManager.onUpdateMap.Invoke();
         }
         else if (isBlocked)
         {
@@ -29,7 +30,8 @@ public class BugBase : MonoBehaviour
             isBlocked = false;
             InvManager.itemQueue.Add(blockingItem);
             Invoke("RetrieveItemReference", 3);
-            EventManager.onUpdateMap.Invoke();
+            PathfinderTargetManager.onTargetUpdate?.Invoke();
+            //EventManager.onUpdateMap?.Invoke();
         }
         else if (InvManager.selectedItem == fixingItem)
         {
@@ -38,7 +40,8 @@ public class BugBase : MonoBehaviour
                 Debug.Log("Fixing");
                 isFixed = true;
                 InvManager.RemoveItems(fixingItem);
-                EventManager.onUpdateMap.Invoke();
+                PathfinderTargetManager.onTargetUpdate?.Invoke();
+                //EventManager.onUpdateMap.Invoke();
             }
             else
             {
@@ -52,7 +55,8 @@ public class BugBase : MonoBehaviour
                 Debug.Log("Blocking");
                 isBlocked = true;
                 InvManager.RemoveItems(blockingItem);
-                EventManager.onUpdateMap.Invoke();
+                PathfinderTargetManager.onTargetUpdate?.Invoke();
+                //EventManager.onUpdateMap.Invoke();
             }
             else
             {
