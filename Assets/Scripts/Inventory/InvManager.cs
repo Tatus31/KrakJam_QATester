@@ -8,8 +8,6 @@ public class InvManager : MonoBehaviour
     public static InvUI invUI;
     public static Dictionary<InvItem, int> Inv;
     public static InvItem SelectedItem;
-
-    // Start is called before the first frame update
     void Start()
     {
         InitInventory();
