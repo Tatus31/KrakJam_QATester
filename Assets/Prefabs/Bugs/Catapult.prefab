@@ -121,6 +121,6 @@ MonoBehaviour:
   isFixed: 0
   isBlocked: 0
   fixingItem: 2
-  blockingItem: 3
+  blockingItem: 2
   playerRB: {fileID: 0}
   cam: {fileID: 0}
