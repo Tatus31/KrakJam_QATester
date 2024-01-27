@@ -32,17 +32,13 @@ public class InvManager : MonoBehaviour
         Inv[itemToAdd]++;
         invUI.UpdateCount();
     }
-    public static bool TryToUseSelectedItem() => TryToUseItem(SelectedItem);
-    public static bool TryToUseItem(InvItem requestedItem)
+    public static void RemoveItems(InvItem itemToAdd)
     {
-        if (Inv[requestedItem] > 0)
-        {
-            Inv[requestedItem]--;
-            invUI.UpdateCount();
-            return true;
-        }
-        return false;
+        Inv[itemToAdd]--;
+        invUI.UpdateCount();
     }
+    public static bool TryToUseSelectedItem() => TryToUseItem(SelectedItem);
+    public static bool TryToUseItem(InvItem requestedItem) => Inv[requestedItem] > 0;
 
     public void Update()
     {
