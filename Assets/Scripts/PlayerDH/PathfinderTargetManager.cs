@@ -26,7 +26,7 @@ public class PathfinderTargetManager : MonoBehaviour
         onTargetUpdate -= UpdateTarget;
     }
 
-    private void UpdateTarget()
+    public void UpdateTarget()
     {
         listOfDistance.Clear();
         foreach (var bug in listOfBugs)
