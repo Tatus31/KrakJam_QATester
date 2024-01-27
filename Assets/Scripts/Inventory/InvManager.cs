@@ -37,6 +37,11 @@ public class InvManager : MonoBehaviour
         Inv[itemToAdd]--;
         invUI.UpdateCount();
     }
+    public static void SetSelectedItem(InvItem newItem)
+    {
+        SelectedItem = newItem;
+        invUI.ChangeSelected();
+    }
     public static bool TryToUseSelectedItem() => TryToUseItem(SelectedItem);
     public static bool TryToUseItem(InvItem requestedItem) => Inv[requestedItem] > 0;
 
@@ -44,18 +49,15 @@ public class InvManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            SelectedItem = InvItem.DoorFixCode;
-            invUI.ChangeSelected();
+            SetSelectedItem(InvItem.DoorFixCode);
         }
         else if (Input.GetKeyDown(KeyCode.W))
         {
-            SelectedItem = InvItem.HoleFixCode;
-            invUI.ChangeSelected();
+            SetSelectedItem(InvItem.HoleFixCode);
         }
         else if (Input.GetKeyDown(KeyCode.E))
         {
-            SelectedItem = InvItem.BarrierCrates;
-            invUI.ChangeSelected();
+            SetSelectedItem(InvItem.BarrierCrates);
         }
     }
 }
