@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Gandhi : BugBase
 {
+    [SerializeField] private GameObject particleObject;
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Invoke("GameOverReference", 3);
+            Invoke("GameOverReference", 2);
+            particleObject.SetActive(true);
             GetComponent<AudioSource>().Play();
         }
     }
