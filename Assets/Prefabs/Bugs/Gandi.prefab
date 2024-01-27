@@ -20,18 +20,33 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 267a2bd9c4eecf6408cbea49fe43ae6a, type: 2}
     - target: {fileID: -8679921383154817045, guid: 1d1ec4e082dcc404b83ae7fd684e2fc9,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1d1ec4e082dcc404b83ae7fd684e2fc9,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1d1ec4e082dcc404b83ae7fd684e2fc9,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1d1ec4e082dcc404b83ae7fd684e2fc9,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: 59.62554
+      value: 56.39058
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1d1ec4e082dcc404b83ae7fd684e2fc9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.086568266
+      value: 0.16275764
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1d1ec4e082dcc404b83ae7fd684e2fc9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.5097885
+      value: 8.03
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1d1ec4e082dcc404b83ae7fd684e2fc9,
         type: 3}
@@ -68,6 +83,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1d1ec4e082dcc404b83ae7fd684e2fc9,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 495975331598566030, guid: 1d1ec4e082dcc404b83ae7fd684e2fc9,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -81,7 +101,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1d1ec4e082dcc404b83ae7fd684e2fc9,
         type: 3}
       propertyPath: m_Name
-      value: Gandi_sketchfab
+      value: Gandi
       objectReference: {fileID: 0}
     - target: {fileID: 4144978046675570852, guid: 1d1ec4e082dcc404b83ae7fd684e2fc9,
         type: 3}
@@ -106,5 +126,52 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1d1ec4e082dcc404b83ae7fd684e2fc9,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6952341578870739674}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1d1ec4e082dcc404b83ae7fd684e2fc9,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 156414729708609018}
   m_SourcePrefab: {fileID: 100100000, guid: 1d1ec4e082dcc404b83ae7fd684e2fc9, type: 3}
+--- !u!1 &3042300581568976871 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1d1ec4e082dcc404b83ae7fd684e2fc9,
+    type: 3}
+  m_PrefabInstance: {fileID: 2808281973648206518}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &6952341578870739674
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3042300581568976871}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 2.4
+  m_Center: {x: 0, y: 1.9, z: 0}
+--- !u!114 &156414729708609018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3042300581568976871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1999c1e07c3600e418047f4b24eb03e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
