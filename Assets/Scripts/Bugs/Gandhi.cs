@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gandhi : MonoBehaviour
+public class Gandhi : BugBase
 {
     void OnCollisionEnter(Collision collision)
     {
