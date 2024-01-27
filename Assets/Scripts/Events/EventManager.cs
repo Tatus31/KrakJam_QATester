@@ -9,6 +9,10 @@ public class EventManager : MonoBehaviour
     public static Action onUpdateMap;
     public void Start()
     {
-        onUpdateMap.Invoke();
+        onUpdateMap += EventConfirmation;
+    }
+    public void EventConfirmation()
+    {
+        Debug.Log("Event Launched");
     }
 }

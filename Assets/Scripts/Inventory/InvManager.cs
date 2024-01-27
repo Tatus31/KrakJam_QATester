@@ -30,9 +30,9 @@ public class InvManager : MonoBehaviour
         Inv[itemToAdd]++;
         invUI.UpdateCount();
     }
-    public static void RemoveItems(InvItem itemToAdd)
+    public static void RemoveItems(InvItem itemToRemove)
     {
-        Inv[itemToAdd]--;
+        Inv[itemToRemove]--;
         invUI.UpdateCount();
     }
     public static void SetSelectedItem(InvItem newItem)
@@ -42,20 +42,4 @@ public class InvManager : MonoBehaviour
     }
     public static bool TryToUseSelectedItem() => TryToUseItem(SelectedItem);
     public static bool TryToUseItem(InvItem requestedItem) => Inv[requestedItem] > 0;
-
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            SetSelectedItem(InvItem.DoorFixCode);
-        }
-        else if (Input.GetKeyDown(KeyCode.W))
-        {
-            SetSelectedItem(InvItem.HoleFixCode);
-        }
-        else if (Input.GetKeyDown(KeyCode.E))
-        {
-            SetSelectedItem(InvItem.BarrierCrates);
-        }
-    }
 }

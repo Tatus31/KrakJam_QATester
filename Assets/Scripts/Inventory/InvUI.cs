@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System;
+using System.Linq;
 
 public class InvUI : MonoBehaviour
 {
@@ -11,11 +11,19 @@ public class InvUI : MonoBehaviour
 
     public void UpdateCount()
     {
+        Debug.Log("Updating item counts in UI");
         TextMeshProUGUI textField;
-        for (int i = 0; i < itemUIs.Count; i++)
+        List<InvItem> itemNames = new();
+
+        foreach (var item in InvManager.Inv)
+        {
+            itemNames.Add(item.Key);
+        }
+
+        for (int i = 0; i < itemUIs.Count && i < itemNames.Count; i++)
         {
             textField = itemUIs[i].GetComponentInChildren<TextMeshProUGUI>();
-            textField.text = $"{InvManager.Inv[InvItem.DoorFixCode]}/{textField.text.Split("/")[1]}";
+            textField.text = $"{InvManager.Inv[itemNames[i]]}/{textField.text.Split("/")[1]}";
         }
     }
     public void ChangeSelected()

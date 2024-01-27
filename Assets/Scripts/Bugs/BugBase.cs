@@ -15,15 +15,15 @@ public class BugBase : MonoBehaviour
         {
             Debug.Log("Unfixing");
             isFixed = false;
-            EventManager.onUpdateMap.Invoke();
             InvManager.AddItems(fixingItem);
+            EventManager.onUpdateMap.Invoke();
         }
         else if (isBlocked)
         {
             Debug.Log("Unblocking");
             isBlocked = false;
-            EventManager.onUpdateMap.Invoke();
             InvManager.AddItems(blockingItem);
+            EventManager.onUpdateMap.Invoke();
         }
         else if (InvManager.SelectedItem == fixingItem)
         {
@@ -31,8 +31,8 @@ public class BugBase : MonoBehaviour
             {
                 Debug.Log("Fixing");
                 isFixed = true;
-                EventManager.onUpdateMap.Invoke();
                 InvManager.RemoveItems(fixingItem);
+                EventManager.onUpdateMap.Invoke();
             }
             else
             {
@@ -45,8 +45,8 @@ public class BugBase : MonoBehaviour
             {
                 Debug.Log("Blocking");
                 isBlocked = true;
-                EventManager.onUpdateMap.Invoke();
                 InvManager.RemoveItems(blockingItem);
+                EventManager.onUpdateMap.Invoke();
             }
             else
             {
