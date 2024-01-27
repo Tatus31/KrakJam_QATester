@@ -27004,6 +27004,7 @@ Transform:
   - {fileID: 1489552450}
   - {fileID: 494114877}
   - {fileID: 1082184793}
+  - {fileID: 1119319430}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &659856014
@@ -47965,6 +47966,12 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!4 &1119319430 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2410477956008922461, guid: 9c57bb9f77ef63341832cec7b7d050d1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1164577077}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1131389993
 Mesh:
   m_ObjectHideFlags: 0
@@ -50184,22 +50191,22 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 659676116}
     m_Modifications:
     - target: {fileID: 2410477956008922461, guid: 9c57bb9f77ef63341832cec7b7d050d1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 64.37
+      value: -6.179497
       objectReference: {fileID: 0}
     - target: {fileID: 2410477956008922461, guid: 9c57bb9f77ef63341832cec7b7d050d1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.83
+      value: 3.2074628
       objectReference: {fileID: 0}
     - target: {fileID: 2410477956008922461, guid: 9c57bb9f77ef63341832cec7b7d050d1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.62
+      value: -1.3370004
       objectReference: {fileID: 0}
     - target: {fileID: 2410477956008922461, guid: 9c57bb9f77ef63341832cec7b7d050d1,
         type: 3}
@@ -50209,7 +50216,7 @@ PrefabInstance:
     - target: {fileID: 2410477956008922461, guid: 9c57bb9f77ef63341832cec7b7d050d1,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2410477956008922461, guid: 9c57bb9f77ef63341832cec7b7d050d1,
         type: 3}
@@ -50219,7 +50226,7 @@ PrefabInstance:
     - target: {fileID: 2410477956008922461, guid: 9c57bb9f77ef63341832cec7b7d050d1,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2410477956008922461, guid: 9c57bb9f77ef63341832cec7b7d050d1,
         type: 3}
@@ -50240,16 +50247,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Gandi
-      objectReference: {fileID: 0}
-    - target: {fileID: 6763952101370813693, guid: 9c57bb9f77ef63341832cec7b7d050d1,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: cf0099acd70b99d4d9f8f01bfcb21f3a, type: 3}
-    - target: {fileID: 6763952101370813693, guid: 9c57bb9f77ef63341832cec7b7d050d1,
-        type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -94733,4 +94730,3 @@ SceneRoots:
   - {fileID: 706379017}
   - {fileID: 659676116}
   - {fileID: 16688948}
-  - {fileID: 1164577077}
