@@ -13,7 +13,7 @@ public class InvManager : MonoBehaviour
     {
         InitInventory();
         selectedItem = InvItem.BarrierCrates;
-        invUI = GameObject.Find("Inventory").GetComponent<InvUI>();
+        invUI = GameObject.Find("InventoryUI").GetComponent<InvUI>();
         itemQueue = new();
     }
 
