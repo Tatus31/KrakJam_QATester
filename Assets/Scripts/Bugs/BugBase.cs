@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BugBase : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class BugBase : MonoBehaviour
     {
         InvManager.RetrieveItem();
     }
+    public void GameOverReference()
+    {
+        SceneManager.LoadScene("GameOverScene");
+    }
     public void OnClick()
     {
         if (isFixed)
@@ -22,7 +27,6 @@ public class BugBase : MonoBehaviour
             InvManager.itemQueue.Add(fixingItem);
             Invoke("RetrieveItemReference", 3);
             PathfinderTargetManager.onTargetUpdate?.Invoke();
-            //EventManager.onUpdateMap.Invoke();
         }
         else if (isBlocked)
         {
@@ -31,7 +35,6 @@ public class BugBase : MonoBehaviour
             InvManager.itemQueue.Add(blockingItem);
             Invoke("RetrieveItemReference", 3);
             PathfinderTargetManager.onTargetUpdate?.Invoke();
-            //EventManager.onUpdateMap?.Invoke();
         }
         else if (InvManager.selectedItem == fixingItem)
         {
@@ -41,7 +44,6 @@ public class BugBase : MonoBehaviour
                 isFixed = true;
                 InvManager.RemoveItems(fixingItem);
                 PathfinderTargetManager.onTargetUpdate?.Invoke();
-                //EventManager.onUpdateMap.Invoke();
             }
             else
             {
@@ -56,7 +58,6 @@ public class BugBase : MonoBehaviour
                 isBlocked = true;
                 InvManager.RemoveItems(blockingItem);
                 PathfinderTargetManager.onTargetUpdate?.Invoke();
-                //EventManager.onUpdateMap.Invoke();
             }
             else
             {
