@@ -9,23 +9,29 @@ public class BugBase : MonoBehaviour
     [SerializeField] public InvItem fixingItem;
     [SerializeField] public InvItem blockingItem;
 
+    public void RetrieveItemReference()
+    {
+        InvManager.RetrieveItem();
+    }
     public void OnClick()
     {
         if (isFixed)
         {
             Debug.Log("Unfixing");
             isFixed = false;
-            InvManager.AddItems(fixingItem);
+            InvManager.itemQueue.Add(fixingItem);
+            Invoke("RetrieveItemReference", 3);
             EventManager.onUpdateMap.Invoke();
         }
         else if (isBlocked)
         {
             Debug.Log("Unblocking");
             isBlocked = false;
-            InvManager.AddItems(blockingItem);
+            InvManager.itemQueue.Add(fixingItem);
+            Invoke("RetrieveItemReference", 3);
             EventManager.onUpdateMap.Invoke();
         }
-        else if (InvManager.SelectedItem == fixingItem)
+        else if (InvManager.selectedItem == fixingItem)
         {
             if (InvManager.TryToUseSelectedItem())
             {
@@ -39,7 +45,7 @@ public class BugBase : MonoBehaviour
                 Debug.Log("No item to Fix");
             }
         }
-        else if (InvManager.SelectedItem == blockingItem)
+        else if (InvManager.selectedItem == blockingItem)
         {
             if (InvManager.TryToUseSelectedItem())
             {

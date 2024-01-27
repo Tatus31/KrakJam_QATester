@@ -15,7 +15,7 @@ public class InvUI : MonoBehaviour
         TextMeshProUGUI textField;
         List<InvItem> itemNames = new();
 
-        foreach (var item in InvManager.Inv)
+        foreach (var item in InvManager.inv)
         {
             itemNames.Add(item.Key);
         }
@@ -23,12 +23,12 @@ public class InvUI : MonoBehaviour
         for (int i = 0; i < itemUIs.Count && i < itemNames.Count; i++)
         {
             textField = itemUIs[i].GetComponentInChildren<TextMeshProUGUI>();
-            textField.text = $"{InvManager.Inv[itemNames[i]]}/{textField.text.Split("/")[1]}";
+            textField.text = $"{InvManager.inv[itemNames[i]]}/{textField.text.Split("/")[1]}";
         }
     }
     public void ChangeSelected()
     {
-        switch (InvManager.SelectedItem)
+        switch (InvManager.selectedItem)
         {
             case InvItem.DoorFixCode:
                 SelectedMarker.GetComponent<RectTransform>().position = itemUIs[0].GetComponent<RectTransform>().position;
