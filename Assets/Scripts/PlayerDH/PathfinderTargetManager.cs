@@ -8,12 +8,14 @@ public class PathfinderTargetManager : MonoBehaviour
 {
     public List<BugBase> listOfBugs { get; private set; }
     private List<float> listOfDistance = new List<float>();
+    AIPlayerController aIPlayerController;
 
     public delegate void UpdateBugState();
     public static Action onTargetUpdate;
     void Awake()
     {
         listOfBugs = FindAllBugs();
+        aIPlayerController = GetComponent<AIPlayerController>();
     }
     private void OnEnable()
     {
@@ -26,14 +28,17 @@ public class PathfinderTargetManager : MonoBehaviour
 
     private void UpdateTarget()
     {
+        listOfDistance.Clear();
         foreach (var bug in listOfBugs)
         {
             if (!bug.isBlocked && !bug.isFixed)
             {
                 listOfDistance.Add(Vector3.Distance(bug.transform.position, gameObject.transform.position));
                 Debug.Log(Vector3.Distance(bug.transform.position, gameObject.transform.position) + bug.name);
+                aIPlayerController.SetCurrentTarget(SetNearestTarget());
             }
         }
+
     }
 
     public Transform SetNearestTarget()
