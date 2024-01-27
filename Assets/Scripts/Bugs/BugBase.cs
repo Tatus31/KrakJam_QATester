@@ -18,13 +18,6 @@ public class BugBase : MonoBehaviour
     {
         SceneManager.LoadScene("GameOverScene");
     }
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Collision with the player!");
-        }
-    }
     public void OnClick()
     {
         if (isFixed)
