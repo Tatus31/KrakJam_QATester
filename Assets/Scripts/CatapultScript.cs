@@ -10,7 +10,7 @@ public class CatapultScript : MonoBehaviour
     private Transform player;
 
     private Vector3 catapultDirection;
-    private Vector3 catapultSpeedMultiplier = new Vector3(1.2f, 1.2f, 1.2f);
+    private Vector3 catapultSpeedMultiplier = new Vector3(3f, 3f, 3f);
 
     private Vector3 catapultOffset = new Vector3(5,5,5);
 
@@ -35,8 +35,8 @@ public class CatapultScript : MonoBehaviour
     private void OnCatapultEnter()
     {
         catapultDirection = cam.transform.position;
-        Vector3 finalCatapultDir = new Vector3(catapultDirection.x + 1.05f * catapultSpeedMultiplier.x
-            , catapultDirection.y - 0.01f * catapultSpeedMultiplier.y
+        Vector3 finalCatapultDir = new Vector3(catapultDirection.x * catapultSpeedMultiplier.x
+            , catapultDirection.y * catapultSpeedMultiplier.y
             , catapultDirection.z * catapultSpeedMultiplier.z);
 
         playerRB.AddForce(finalCatapultDir, ForceMode.Impulse);

@@ -30,7 +30,7 @@ public class AIPlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentTarget = targetManager.UpdateTarget();
+        //currentTarget = targetManager.UpdateTarget();
         meshAgent.SetDestination(currentTarget.position);
 
 
