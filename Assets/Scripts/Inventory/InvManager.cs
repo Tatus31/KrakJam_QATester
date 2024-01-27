@@ -6,20 +6,20 @@ using UnityEngine.PlayerLoop;
 public class InvManager : MonoBehaviour
 {
     public static InvUI invUI;
-    public static Dictionary<InvItem, int> Inv;
-    public static InvItem SelectedItem;
-
-    // Start is called before the first frame update
+    public static Dictionary<InvItem, int> inv;
+    public static List<InvItem> itemQueue;
+    public static InvItem selectedItem;
     void Start()
     {
         InitInventory();
-        SelectedItem = InvItem.BarrierCrates;
+        selectedItem = InvItem.BarrierCrates;
         invUI = GameObject.Find("Inventory").GetComponent<InvUI>();
+        itemQueue = new();
     }
 
     public void InitInventory()
     {
-        Inv = new()
+        inv = new()
         {
             { InvItem.DoorFixCode, 1 },
             { InvItem.HoleFixCode, 1 },
@@ -29,33 +29,25 @@ public class InvManager : MonoBehaviour
 
     public static void AddItems(InvItem itemToAdd)
     {
-        Inv[itemToAdd]++;
+        inv[itemToAdd]++;
         invUI.UpdateCount();
     }
-    public static void RemoveItems(InvItem itemToAdd)
+    public static void RemoveItems(InvItem itemToRemove)
     {
-        Inv[itemToAdd]--;
+        inv[itemToRemove]--;
         invUI.UpdateCount();
     }
-    public static bool TryToUseSelectedItem() => TryToUseItem(SelectedItem);
-    public static bool TryToUseItem(InvItem requestedItem) => Inv[requestedItem] > 0;
-
-    public void Update()
+    public static void RetrieveItem()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            SelectedItem = InvItem.DoorFixCode;
-            invUI.ChangeSelected();
-        }
-        else if (Input.GetKeyDown(KeyCode.W))
-        {
-            SelectedItem = InvItem.HoleFixCode;
-            invUI.ChangeSelected();
-        }
-        else if (Input.GetKeyDown(KeyCode.E))
-        {
-            SelectedItem = InvItem.BarrierCrates;
-            invUI.ChangeSelected();
-        }
+        Debug.Log("Item Retrieved");
+        AddItems(itemQueue[0]);
+        itemQueue.RemoveAt(0);
     }
+    public static void SetSelectedItem(InvItem newItem)
+    {
+        selectedItem = newItem;
+        invUI.ChangeSelected();
+    }
+    public static bool TryToUseSelectedItem() => TryToUseItem(selectedItem);
+    public static bool TryToUseItem(InvItem requestedItem) => inv[requestedItem] > 0;
 }

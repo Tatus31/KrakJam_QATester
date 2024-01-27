@@ -2,38 +2,42 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System;
+using System.Linq;
 
 public class InvUI : MonoBehaviour
 {
-    [SerializeField] public GameObject ItemA;
-    [SerializeField] public GameObject ItemB;
-    [SerializeField] public GameObject ItemC;
+    [SerializeField] public List<GameObject> itemUIs;
     [SerializeField] public GameObject SelectedMarker;
 
     public void UpdateCount()
     {
-        TextMeshProUGUI textField = ItemA.GetComponentInChildren<TextMeshProUGUI>();
-        textField.text = $"{InvManager.Inv[InvItem.DoorFixCode]}/{textField.text.Split("/")[1]}";
+        //Debug.Log("Updating item counts in UI");
+        TextMeshProUGUI textField;
+        List<InvItem> itemNames = new();
 
-        textField = ItemB.GetComponentInChildren<TextMeshProUGUI>();
-        textField.text = $"{InvManager.Inv[InvItem.HoleFixCode]}/{textField.text.Split("/")[1]}";
+        foreach (var item in InvManager.inv)
+        {
+            itemNames.Add(item.Key);
+        }
 
-        textField = ItemC.GetComponentInChildren<TextMeshProUGUI>();
-        textField.text = $"{InvManager.Inv[InvItem.BarrierCrates]}/{textField.text.Split("/")[1]}";
+        for (int i = 0; i < itemUIs.Count && i < itemNames.Count; i++)
+        {
+            textField = itemUIs[i].GetComponentInChildren<TextMeshProUGUI>();
+            textField.text = $"{InvManager.inv[itemNames[i]]}/{textField.text.Split("/")[1]}";
+        }
     }
     public void ChangeSelected()
     {
-        switch (InvManager.SelectedItem)
+        switch (InvManager.selectedItem)
         {
             case InvItem.DoorFixCode:
-                SelectedMarker.GetComponent<RectTransform>().position = ItemA.GetComponent<RectTransform>().position;
+                SelectedMarker.GetComponent<RectTransform>().position = itemUIs[0].GetComponent<RectTransform>().position;
                 break;
             case InvItem.HoleFixCode:
-                SelectedMarker.GetComponent<RectTransform>().position = ItemB.GetComponent<RectTransform>().position;
+                SelectedMarker.GetComponent<RectTransform>().position = itemUIs[1].GetComponent<RectTransform>().position;
                 break;
             case InvItem.BarrierCrates:
-                SelectedMarker.GetComponent<RectTransform>().position = ItemC.GetComponent<RectTransform>().position;
+                SelectedMarker.GetComponent<RectTransform>().position = itemUIs[2].GetComponent<RectTransform>().position;
                 break;
         }
     }
