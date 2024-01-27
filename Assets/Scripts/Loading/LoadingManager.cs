@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class LoadingManager : MonoBehaviour
 {
-    public int timeLeft = 120;
+    public static int timeLeft = 120;
 }
