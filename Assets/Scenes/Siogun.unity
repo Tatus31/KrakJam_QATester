@@ -380,9 +380,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ebeceb82677e245b75d2cc78ee0ab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemA: {fileID: 1878898953}
-  ItemB: {fileID: 263841643}
-  ItemC: {fileID: 1471616561}
+  itemUIs:
+  - {fileID: 1878898953}
+  - {fileID: 263841643}
+  - {fileID: 1471616561}
   SelectedMarker: {fileID: 3157743825777159595}
 --- !u!1 &381985387
 GameObject:
