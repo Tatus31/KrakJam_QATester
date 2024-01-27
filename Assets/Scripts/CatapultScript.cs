@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class CatapultScript : MonoBehaviour
 {
-    private Vector3 catapultSpeed = new Vector3(0, 75, 25);
+
     [SerializeField]
     private Rigidbody playerRB;
     private Transform player;
-    private Vector3 playerDeletePosition = new Vector3(0, 50, 0);
-    private bool isFixed = false;
+
+    private Vector3 catapultDirection;
+    private Vector3 catapultSpeedMultiplier = new Vector3(3f, 3f, 3f);
+
+    private Vector3 catapultOffset = new Vector3(5,5,5);
+
+    [SerializeField]
+    Camera cam;
 
     private void Start()
     {
@@ -20,15 +26,20 @@ public class CatapultScript : MonoBehaviour
     private void Update()
     {
         Debug.Log(playerRB.transform.position.y);
-        if (playerRB.transform.position.y >= playerDeletePosition.y)
-        {
-            player.transform.gameObject.SetActive(false);
-        }
+        //if (playerRB.transform.position.y >= playerDeletePosition.y)
+        //{
+        //    player.transform.gameObject.SetActive(false);
+        //}
     }
 
     private void OnCatapultEnter()
     {
-        playerRB.velocity = new Vector3(playerRB.velocity.x, catapultSpeed.y, catapultSpeed.z);
+        catapultDirection = cam.transform.position;
+        Vector3 finalCatapultDir = new Vector3(catapultDirection.x * catapultSpeedMultiplier.x
+            , catapultDirection.y * catapultSpeedMultiplier.y
+            , catapultDirection.z * catapultSpeedMultiplier.z);
+
+        playerRB.AddForce(finalCatapultDir, ForceMode.Impulse);
     }
 
     private void OnCollisionEnter(Collision collision)
