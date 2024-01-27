@@ -12,9 +12,13 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.W))
         {
-            InvManager.SetSelectedItem(InvItem.HoleFixCode);
+            InvManager.SetSelectedItem(InvItem.CatapultFixCode);
         }
         else if (Input.GetKeyDown(KeyCode.E))
+        {
+            InvManager.SetSelectedItem(InvItem.HoleFixCode);
+        }
+        else if (Input.GetKeyDown(KeyCode.R))
         {
             InvManager.SetSelectedItem(InvItem.BarrierCrates);
         }

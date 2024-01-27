@@ -22,6 +22,7 @@ public class InvManager : MonoBehaviour
         inv = new()
         {
             { InvItem.DoorFixCode, 1 },
+            {InvItem.CatapultFixCode, 1},
             { InvItem.HoleFixCode, 1 },
             { InvItem.BarrierCrates, 2 }
         };

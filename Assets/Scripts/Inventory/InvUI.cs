@@ -33,11 +33,14 @@ public class InvUI : MonoBehaviour
             case InvItem.DoorFixCode:
                 SelectedMarker.GetComponent<RectTransform>().position = itemUIs[0].GetComponent<RectTransform>().position;
                 break;
-            case InvItem.HoleFixCode:
+            case InvItem.CatapultFixCode:
                 SelectedMarker.GetComponent<RectTransform>().position = itemUIs[1].GetComponent<RectTransform>().position;
                 break;
-            case InvItem.BarrierCrates:
+            case InvItem.HoleFixCode:
                 SelectedMarker.GetComponent<RectTransform>().position = itemUIs[2].GetComponent<RectTransform>().position;
+                break;
+            case InvItem.BarrierCrates:
+                SelectedMarker.GetComponent<RectTransform>().position = itemUIs[3].GetComponent<RectTransform>().position;
                 break;
         }
     }
