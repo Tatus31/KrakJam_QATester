@@ -10,8 +10,8 @@ public class AIPlayerController : MonoBehaviour
 {
     private PathfinderTargetManager targetManager;
     private NavMeshAgent meshAgent;
-    [SerializeField] private Transform currentTarget;
-
+    //[SerializeField] private Transform currentTarget;
+    public Transform currentTarget { get; private set; }
 
     private void OnEnable()
     {
