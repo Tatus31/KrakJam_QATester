@@ -33,6 +33,7 @@ public class CatapultScript : BugBase
 
     private void OnCatapultEnter()
     {
+        Invoke("GameOverReference", 2);
         catapultDirection = cam.transform.position;
         Debug.Log("x" + catapultDirection.x + "y" + catapultDirection.y + "z" + catapultDirection.z);
         Vector3 finalCatapultDir = new Vector3(catapultDirection.x + catapultOffset.x * catapultSpeedMultiplier.x
