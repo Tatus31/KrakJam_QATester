@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Cinemachine;
 
 public class Catapult : BugBase
 {
+    [SerializeField] private CinemachineVirtualCamera TransitionCamera;
+    [SerializeField] private CinemachineVirtualCamera MainCamera;
 
     [SerializeField]
     private Rigidbody playerRB;
@@ -49,6 +52,9 @@ public class Catapult : BugBase
 
     private void OnCollisionEnter(Collision collision)
     {
+
+        TransitionCamera.Priority = 30;
+
         if (collision.collider.tag == "Player")
         {
             OnCatapultEnter();
