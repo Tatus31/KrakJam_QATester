@@ -10,8 +10,9 @@ public class CatapultTime : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb.AddForce(Vector3.up * 50f, ForceMode.Impulse);
+        Debug.Log("Flying");
         rb = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
+        rb.AddForce(Vector3.up * 50f, ForceMode.Impulse);
     }
 
 }
