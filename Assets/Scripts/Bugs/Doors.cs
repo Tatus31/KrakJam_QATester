@@ -1,17 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine;
 
 public class Doors : BugBase
 {
-    [SerializeField] private CinemachineVirtualCamera TransitionCamera;
-    [SerializeField] private CinemachineVirtualCamera MainCamera;
+    [SerializeField]
+    private Animator animator;
+
+
+    private void Start()
+    {
+        animator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+    }
+
     void OnCollisionEnter(Collision collision)
     {
-        TransitionCamera.Priority = 30;
         if (collision.gameObject.CompareTag("Player"))
         {
+            animator.SetBool("IsStuck", true);
             Invoke("GameOverReference", 3);
         }
     }
