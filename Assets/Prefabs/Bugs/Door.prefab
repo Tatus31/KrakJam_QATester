@@ -93,6 +93,7 @@ MonoBehaviour:
   isBlocked: 0
   fixingItem: 0
   blockingItem: 0
+  animator: {fileID: 0}
 --- !u!1001 &3600134186001253894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -156,7 +157,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorV6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4462372073614086891, guid: 89dd74c61103b7644ab2dd9d26606ea0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

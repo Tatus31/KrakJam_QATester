@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 713e0022c0ffe974bb14d5e0611b0797, type: 3}
+  m_Name: NewMasterSequence
+  m_EditorClassIdentifier: 
+  m_RootIndex: 0
+  m_Manager:
+    rid: 8419170085974573056
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 8419170085974573056
+      type: {class: SequenceManager, ns: UnityEngine.Sequences, asm: Unity.Sequences}
+      data:
+        m_Data:
+        - rid: 8419170085974573057
+        - rid: 8419170085974573065
+        - rid: 8419170085974573067
+        - rid: 8419170085974573075
+        - rid: -2
+        - rid: 8419170085974573077
+        m_AvailableIndices:
+          rid: 8419170085974573063
+    - rid: 8419170085974573057
+      type: {class: TimelineSequence, ns: UnityEngine.Sequences, asm: Unity.Sequences}
+      data:
+        m_Name: NewMasterSequence
+        m_Fps: 60
+        m_Start: 0
+        m_Duration: 12.033333333333
+        m_Parent: -1
+        m_Children: 01000000020000000300000005000000
+        m_Timeline: {fileID: 11400000, guid: 82eca1366acfebc418b55ae47bc83e0e, type: 2}
+        m_ChildrenTrack: {fileID: -448649690618454815, guid: 82eca1366acfebc418b55ae47bc83e0e,
+          type: 2}
+        m_DefaultChildrenTrackName: Sequences
+        m_EditorialClipAsset: {fileID: 0}
+    - rid: 8419170085974573063
+      type: {class: StackInt, ns: UnityEngine.Sequences, asm: Unity.Sequences}
+      data: 
+    - rid: 8419170085974573065
+      type: {class: TimelineSequence, ns: UnityEngine.Sequences, asm: Unity.Sequences}
+      data:
+        m_Name: Dziura
+        m_Fps: -1
+        m_Start: 0
+        m_Duration: 2
+        m_Parent: 0
+        m_Children: 
+        m_Timeline: {fileID: 11400000, guid: 03da498aeb8b39d48adaa4684eab8230, type: 2}
+        m_ChildrenTrack: {fileID: 0}
+        m_DefaultChildrenTrackName: Sequences
+        m_EditorialClipAsset: {fileID: -2230824390733629222, guid: 82eca1366acfebc418b55ae47bc83e0e,
+          type: 2}
+    - rid: 8419170085974573067
+      type: {class: TimelineSequence, ns: UnityEngine.Sequences, asm: Unity.Sequences}
+      data:
+        m_Name: Drzwi
+        m_Fps: -1
+        m_Start: 2
+        m_Duration: 2
+        m_Parent: 0
+        m_Children: 
+        m_Timeline: {fileID: 11400000, guid: 36d7f38ff52482345996dbb7bfee1c64, type: 2}
+        m_ChildrenTrack: {fileID: 0}
+        m_DefaultChildrenTrackName: Sequences
+        m_EditorialClipAsset: {fileID: 0}
+    - rid: 8419170085974573075
+      type: {class: TimelineSequence, ns: UnityEngine.Sequences, asm: Unity.Sequences}
+      data:
+        m_Name: Wybuch
+        m_Fps: -1
+        m_Start: 10.033333333333
+        m_Duration: 2
+        m_Parent: 0
+        m_Children: 
+        m_Timeline: {fileID: 11400000, guid: 91993a6e0d866cd459b7a69d5b1db5a5, type: 2}
+        m_ChildrenTrack: {fileID: 0}
+        m_DefaultChildrenTrackName: Sequences
+        m_EditorialClipAsset: {fileID: 0}
+    - rid: 8419170085974573077
+      type: {class: TimelineSequence, ns: UnityEngine.Sequences, asm: Unity.Sequences}
+      data:
+        m_Name: Katapulta
+        m_Fps: -1
+        m_Start: 2
+        m_Duration: 2
+        m_Parent: 0
+        m_Children: 
+        m_Timeline: {fileID: 11400000, guid: fbafb74d6d729d44592f7d5ee29a4cb1, type: 2}
+        m_ChildrenTrack: {fileID: 0}
+        m_DefaultChildrenTrackName: Sequences
+        m_EditorialClipAsset: {fileID: 3368443650046530157, guid: 82eca1366acfebc418b55ae47bc83e0e,
+          type: 2}
